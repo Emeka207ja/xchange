@@ -1,5 +1,5 @@
 import React from 'react'
-import { VStack } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import Footer from '../Footer'
 import Nav from '../Navbar'
 import { ReactNode } from "react";
@@ -10,11 +10,15 @@ interface Props{
 }
 export const Layout = ({children}:Props) => {
   return (
-		<>
-			<Nav />
+		<Box minHeight={"100vh"} display={"flex"} flexDirection={"column"}>
+			<Box>
+				<Nav />
+			</Box>
 			{children}
-			<Footer />
-		</>
+			<Box marginTop={"auto"}>
+				<Footer />
+			</Box>
+		</Box>
 	);
 }
 

@@ -15,13 +15,9 @@ interface Props {
 
 export default function Home({children}:Props) {
   return <>
-    {/* <Box>
-      <Navbar />
-      <Box>Hello</Box>
-      <Footer/>
-    </Box> */}
+   
     <Layout>
-      <Box>Hello</Box>
+      <Box>Xchange in progress</Box>
     </Layout>
   </>
 }
