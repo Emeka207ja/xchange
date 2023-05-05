@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 import Navbar from '../../Components/Navbar'
 import Footer from '../../Components/Footer'
 import { ReactNode } from 'react'
-
+import { Layout } from '../../Components/Layout'
 
 interface Props {
 	children: ReactNode;
@@ -15,10 +15,13 @@ interface Props {
 
 export default function Home({children}:Props) {
   return <>
-    <Box>
+    {/* <Box>
       <Navbar />
       <Box>Hello</Box>
       <Footer/>
-    </Box>
+    </Box> */}
+    <Layout>
+      <Box>Hello</Box>
+    </Layout>
   </>
 }
