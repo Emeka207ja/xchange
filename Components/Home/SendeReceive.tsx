@@ -7,7 +7,8 @@ import {
     Input,
     Select,
     Stack,
-    useMediaQuery
+	useMediaQuery,
+	Flex,Image
 } from '@chakra-ui/react'
 
 const SendeReceive = () => {
@@ -15,21 +16,59 @@ const SendeReceive = () => {
   return (
 		<Box>
 			<form>
-				<Stack direction={{ base: "column", md: "row" }}>
+				<Flex
+					flexDirection={{ base: "column", md: "row" }}
+					alignItems={"center"}
+					justifyContent={"space-around"}
+				>
 					<FormControl>
-						<FormLabel>Send</FormLabel>
-						<Input />
-					</FormControl>
-					{!isMobile && <Box>Icon</Box>}
-					<FormControl>
-						<FormLabel>Send</FormLabel>
-						<Select placeholder="select">
-							<option value="option1" style={{width:"2rem"}}>Option 1</option>
-							<option value="option2">Option 2</option>
-							<option value="option3" >Option 3</option>
+						<FormLabel textAlign={"center"}>Send</FormLabel>
+						<Select
+							placeholder="select"
+							width={{ base: "sm", md: "md" }}
+							display={"relative"}
+							left={{ base: "0", md: "0" }}
+						>
+							<option value="option1" style={{ fontSize: "0.6rem" }}>
+								Bitcoin
+							</option>
+							<option
+								value="option2"
+								style={{ fontSize: "0.6rem", width: "4rem" }}
+							>
+								USDT
+							</option>
+							<option
+								value="option3"
+								style={{ fontSize: "0.6rem", width: "4rem" }}
+							>
+								Option 3
+							</option>
 						</Select>
 					</FormControl>
-				</Stack>
+					{!isMobile && (
+						<Box width={"7rem"} pos={"relative"} right={"2rem"} top={"1rem"}>
+							<Image src="/assets/images/exchange.png" alt="" width={"100%"}  objectFit={"cover"}/>
+						</Box>
+					)}
+					<FormControl>
+						<FormLabel textAlign={"center"}>Receive</FormLabel>
+						<Select
+							placeholder="select"
+							width={{ base: "sm", md: "md" }}
+							display={"relative"}
+							left={{ base: "0", md: "0" }}
+						>
+							<option
+								value="option1"
+								style={{ fontSize: "0.6rem", width: "4rem" }}
+							>
+								Naira
+							</option>
+							
+						</Select>
+					</FormControl>
+				</Flex>
 			</form>
 		</Box>
 	);
