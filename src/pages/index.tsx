@@ -8,6 +8,7 @@ import Navbar from '../../Components/Navbar'
 import Footer from '../../Components/Footer'
 import { ReactNode } from 'react'
 import { Layout } from '../../Components/Layout'
+import LandingPage from '../../Components/Home'
 
 interface Props {
 	children: ReactNode;
@@ -17,7 +18,9 @@ export default function Home({children}:Props) {
   return <>
    
     <Layout>
-      <Box>Xchange in progress</Box>
+      <Box width={"95rem"}>
+        <LandingPage/>
+      </Box>
     </Layout>
   </>
 }
