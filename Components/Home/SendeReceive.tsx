@@ -3,13 +3,13 @@ import {
     Box,
     FormLabel,
     FormControl,
-    HStack,
-    Input,
-    Select,
-    Stack,
+    
+	Select,
+	Button,
 	useMediaQuery,
 	Flex,Image
 } from '@chakra-ui/react'
+import {RiExchangeDollarLine} from "react-icons/ri"
 
 const SendeReceive = () => {
 	const [isMobile] = useMediaQuery("(max-width: 768px)"); 
@@ -42,8 +42,8 @@ const SendeReceive = () => {
 							width={{ base: "sm", md: "md" }}
 							display={"relative"}
 							left={{ base: "0", md: "0" }}
-						  value={coin}
-						  onChange={(e)=>handleChange(e,setCoin)}
+							value={coin}
+							onChange={(e) => handleChange(e, setCoin)}
 						>
 							<option value="Bitcoin" style={{ fontSize: "0.6rem" }}>
 								Bitcoin
@@ -83,9 +83,9 @@ const SendeReceive = () => {
 							placeholder="select"
 							width={{ base: "sm", md: "md" }}
 							display={"relative"}
-						  left={{ base: "0", md: "0" }}
-						  value={receive}
-						  onChange={(e)=>handleChange(e,setReceive)}
+							left={{ base: "0", md: "0" }}
+							value={receive}
+							onChange={(e) => handleChange(e, setReceive)}
 						>
 							<option
 								value="naira"
@@ -96,6 +96,21 @@ const SendeReceive = () => {
 						</Select>
 					</FormControl>
 				</Flex>
+				<Box>
+					<Button
+						colorScheme="red"
+						pos={"relative"}
+						left={{base:"30%", md: "42%" }}
+					  mt={{ base: "1rem", md: "2rem" }}
+					  mb={"1rem"}
+					  type={"submit"}
+					>
+						<Box paddingRight={"0.5rem"}>
+							<RiExchangeDollarLine />
+						</Box>
+						Exchange
+					</Button>
+				</Box>
 			</form>
 		</Box>
 	);
