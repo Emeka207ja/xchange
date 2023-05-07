@@ -1,13 +1,15 @@
 import React from 'react'
 import { Box, Text, HStack, Stack, useColorMode, Center } from '@chakra-ui/react'
 import SendeReceive from './SendeReceive';
+import FundingGuildeline from './FundingGuildeline';
+import SellGiftCard from './SellGiftCard';
 
 const Home = () => {
  const { colorMode, toggleColorMode } = useColorMode();
   return (
 		<Box
 			width={"100%"}
-			mt={"2rem"}
+			
 			bg={colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.200"}
 			borderRadius={"md"}
 		>
@@ -29,7 +31,9 @@ const Home = () => {
 							Start exchanges
 						</Text>
                   </Box>
-                  <SendeReceive/>
+				  <SendeReceive />
+				  <FundingGuildeline />
+				  <SellGiftCard/>
 				</Box>
 
 				<Box

@@ -9,7 +9,8 @@ import {
 	useMediaQuery,
 	Flex,Image
 } from '@chakra-ui/react'
-import {RiExchangeDollarLine} from "react-icons/ri"
+import { RiExchangeDollarLine } from "react-icons/ri"
+import {FaExchangeAlt} from "react-icons/fa"
 
 const SendeReceive = () => {
 	const [isMobile] = useMediaQuery("(max-width: 768px)"); 
@@ -63,13 +64,8 @@ const SendeReceive = () => {
 						</Select>
 					</FormControl>
 					{!isMobile && (
-						<Box width={"7rem"} pos={"relative"} right={"2rem"} top={"1rem"}>
-							<Image
-								src="/assets/images/exchange.png"
-								alt=""
-								width={"100%"}
-								objectFit={"cover"}
-							/>
+						<Box  pos={"relative"} right={"2rem"} top={"1rem"}>
+							<FaExchangeAlt/>
 						</Box>
 					)}
 					<FormControl>

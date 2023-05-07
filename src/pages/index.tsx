@@ -9,6 +9,7 @@ import Footer from '../../Components/Footer'
 import { ReactNode } from 'react'
 import { Layout } from '../../Components/Layout'
 import LandingPage from '../../Components/Home'
+import Marque from '../../Components/Home/Marque'
 
 interface Props {
 	children: ReactNode;
@@ -19,6 +20,7 @@ export default function Home({children}:Props) {
    
     <Layout>
       <Box width={"95rem"}>
+        <Marque/>
         <LandingPage/>
       </Box>
     </Layout>
