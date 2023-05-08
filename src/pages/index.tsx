@@ -19,7 +19,7 @@ export default function Home({children}:Props) {
   return <>
    
     <Layout>
-      <Box width={"95rem"}>
+      <Box >
         <Marque/>
         <LandingPage/>
       </Box>

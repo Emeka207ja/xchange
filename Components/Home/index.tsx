@@ -1,53 +1,69 @@
 import React from 'react'
-import { Box, Text, HStack, Stack, useColorMode, Center } from '@chakra-ui/react'
+import { Box, Text, HStack, Stack, useColorMode, Center,Grid,GridItem } from '@chakra-ui/react'
 import SendeReceive from './SendeReceive';
 import FundingGuildeline from './FundingGuildeline';
 import SellGiftCard from './SellGiftCard';
+import { Rates } from './Rate';
+import {AiOutlineMenu} from "react-icons/ai"
+
 
 const Home = () => {
  const { colorMode, toggleColorMode } = useColorMode();
   return (
 		<Box
-			width={"100%"}
 			
 			bg={colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.200"}
 			borderRadius={"md"}
 		>
-			<Stack
-				direction={{ sm: "column", md: "row" }}
-				width={"100%"}
-				display={{ sm: "block", md: "flex" }}
+			
+			<Grid
+				gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(3,1fr)" }}
+				gap={4}
 			>
-				<Box
-					width={{ base: "30rem", md: "70%" }}
+				<GridItem
+					colSpan={{ md: 2 }}
 					bg={colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.200"}
 					borderRadius={"md"}
 				>
-					<Box position={"relative"} right={{ base: "2rem", md: "0" }}>
+					<Box >
 						<Text
 							textAlign={{ base: "center", md: "center" }}
 							fontSize={"0.9rem"}
 						>
 							Start exchanges
 						</Text>
-                  </Box>
-				  <SendeReceive />
-				  <FundingGuildeline />
-				  <SellGiftCard/>
-				</Box>
+					</Box>
+					<SendeReceive />
+					<FundingGuildeline />
+					<SellGiftCard />
+				</GridItem>
 
-				<Box
-					width={{ base: "30rem", md: "30%" }}
+				<GridItem
+					colSpan={{ md: 1 }}
 					bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
 					borderRadius={"md"}
 				>
-					<Box position={"relative"} right={{ base: "2rem", md: "0" }}>
-						<Text textAlign={"center"} fontSize={"0.9rem"}>
-							Our rates
-						</Text>
+					<Box>
+						<Box
+							marginLeft={{ base: "0.7rem", md: "0" }}
+							paddingTop={{ base: "0.7rem", md: "0" }}
+						>
+							<HStack>
+								<Box>
+									<AiOutlineMenu />
+								</Box>
+								<Box>
+									<Text fontSize={"0.9rem"}>Our rates</Text>
+								</Box>
+							</HStack>
+						</Box>
+
+						<Rates />
 					</Box>
-				</Box>
-			</Stack>
+				</GridItem>
+			</Grid>
+
+			{/* neeeewwwww */}
 		</Box>
 	);
 }

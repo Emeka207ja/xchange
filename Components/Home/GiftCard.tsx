@@ -17,7 +17,7 @@ interface Props{
 
 const GiftCard = ({id,img,name}:Props) => {
   return (
-		<Card width={{base:"78%",md:"100%"}}>
+		<Card>
 			<CardBody>
 				<Image src={img} alt={name} w={"100%"} />
 			</CardBody>
