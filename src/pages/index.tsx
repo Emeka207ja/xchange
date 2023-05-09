@@ -10,6 +10,7 @@ import { ReactNode } from 'react'
 import { Layout } from '../../Components/Layout'
 import LandingPage from '../../Components/Home'
 import Marque from '../../Components/Home/Marque'
+import Tawk from '../../Components/Tawk'
 
 interface Props {
 	children: ReactNode;
@@ -21,7 +22,8 @@ export default function Home({children}:Props) {
     <Layout>
       <Box >
         <Marque/>
-        <LandingPage/>
+        <LandingPage />
+        <Tawk/>
       </Box>
     </Layout>
   </>

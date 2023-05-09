@@ -24,7 +24,7 @@ const SendeReceive = () => {
 		fn(e.target.value);
 	};
   return (
-		<Box>
+		<Box >
 			<form>
 				<Flex
 					flexDirection={{ base: "column", md: "row" }}
@@ -64,8 +64,8 @@ const SendeReceive = () => {
 						</Select>
 					</FormControl>
 					{!isMobile && (
-						<Box  pos={"relative"} right={"2rem"} top={"1rem"}>
-							<FaExchangeAlt/>
+						<Box pos={"relative"} right={"2rem"} top={"1rem"}>
+							<FaExchangeAlt />
 						</Box>
 					)}
 					<FormControl>
@@ -96,10 +96,10 @@ const SendeReceive = () => {
 					<Button
 						colorScheme="red"
 						pos={"relative"}
-						left={{base:"30%", md: "42%" }}
-					  mt={{ base: "1rem", md: "2rem" }}
-					  mb={"1rem"}
-					  type={"submit"}
+						left={{ base: "30%", md: "42%" }}
+						mt={{ base: "1rem", md: "2rem" }}
+						mb={"1rem"}
+						type={"submit"}
 					>
 						<Box paddingRight={"0.5rem"}>
 							<RiExchangeDollarLine />
