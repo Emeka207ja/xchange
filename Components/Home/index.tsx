@@ -4,7 +4,8 @@ import SendeReceive from './SendeReceive';
 import FundingGuildeline from './FundingGuildeline';
 import SellGiftCard from './SellGiftCard';
 import { Rates } from './Rate';
-import {AiOutlineMenu} from "react-icons/ai"
+import { AiOutlineMenu } from "react-icons/ai"
+import Testimonial from './Testimonial';
 
 
 const Home = () => {
@@ -58,7 +59,8 @@ const Home = () => {
 							</HStack>
 						</Box>
 
-						<Rates />
+					  <Rates />
+					  <Testimonial/>
 					</Box>
 				</GridItem>
 			</Grid>

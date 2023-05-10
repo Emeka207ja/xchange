@@ -11,7 +11,7 @@ const Tawk = () => {
    
   return (
 		<Box>
-			<Button onClick={handleMinimize}>minimize chat</Button>
+			<Button onClick={handleMinimize} display={"none"}>minimize chat</Button>
 			<TawkMessengerReact
 				propertyId="645844b7ad80445890eba0d3"
 				widgetId="1gvscorem"
