@@ -7,7 +7,10 @@ import {
 	Select,
 	Button,
 	useMediaQuery,
-	Flex,Image
+	Flex,
+	Image,
+	Grid,
+	GridItem
 } from '@chakra-ui/react'
 import { RiExchangeDollarLine } from "react-icons/ri"
 import {FaExchangeAlt} from "react-icons/fa"
@@ -24,14 +27,14 @@ const SendeReceive = () => {
 		fn(e.target.value);
 	};
   return (
-		<Box >
-			<form>
+		<Box>
+			{/* <form>
 				<Flex
 					flexDirection={{ base: "column", md: "row" }}
 					alignItems={"center"}
 					justifyContent={"space-around"}
 				>
-					<FormControl>
+					<FormControl w={{base:"20", md:"100%"}}>
 						<FormLabel
 							textAlign={{ md: "center" }}
 							marginLeft={{ base: "1rem", md: "0" }}
@@ -107,6 +110,68 @@ const SendeReceive = () => {
 						Exchange
 					</Button>
 				</Box>
+			</form> */}
+
+			<form >
+				<Grid
+					gridTemplateColumns={{ base: "repeat(1fr)", md: "repeat(5,1fr)" }}
+					alignItems={"center"}
+				  justifyItems={"center"}
+				  marginRight={{base:"2rem",md:"0"}}
+				>
+					<GridItem colSpan={{ md: 2 }}>
+						<FormControl w={{ base: "19rem" }}>
+							<FormLabel>Send</FormLabel>
+							<Select
+								placeholder="select"
+								value={coin}
+								onChange={(e) => handleChange(e, setCoin)}
+							>
+								<option value="Bitcoin" style={{ fontSize: "0.6rem" }}>
+									Bitcoin
+								</option>
+								<option
+									value="usdt"
+									style={{ fontSize: "0.6rem", width: "4rem" }}
+								>
+									USDT
+								</option>
+								<option
+									value="option3"
+									style={{ fontSize: "0.6rem", width: "4rem" }}
+								>
+									Option 3
+								</option>
+							</Select>
+						</FormControl>
+					</GridItem>
+
+					{/* second grid item */}
+					<GridItem colSpan={{ md: 1 }}>
+						<Box mt={7}>
+							<FaExchangeAlt />
+						</Box>
+					</GridItem>
+
+					{/* third grid item */}
+					<GridItem colSpan={{ md: 2 }}>
+						<FormControl w={{ base: "19rem" }}>
+							<FormLabel>Receive</FormLabel>
+							<Select
+								placeholder="select"
+								value={receive}
+								onChange={(e) => handleChange(e, setReceive)}
+							>
+								<option
+									value="naira"
+									style={{ fontSize: "0.6rem", width: "4rem" }}
+								>
+									Naira
+								</option>
+							</Select>
+						</FormControl>
+					</GridItem>
+				</Grid>
 			</form>
 		</Box>
 	);

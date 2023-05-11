@@ -16,10 +16,18 @@ const Carousel = () => {
             autoplay:true
 		};
     return (
-			<Container w={{ base: "22rem", md: "md" }}>
+			<Container w={{ base: "sm", md: "md" }}>
 				<Slider {...settings}>
 				{
-					testimonial.map(el => <CarouselItem content={el.content} key={el.id} name={el.name } />)
+					testimonial.map(el => <CarouselItem
+						content={el.content}
+						key={el.id}
+						name={el.name}
+						from={el.from}
+						to={el.to}
+						img1={el.img1}
+						img2={el.img2}
+					/>)
 					}
 				</Slider>
 			</Container>

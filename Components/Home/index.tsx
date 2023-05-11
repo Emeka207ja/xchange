@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, HStack, Stack, useColorMode, Center,Grid,GridItem } from '@chakra-ui/react'
+import { Box, Text, HStack, Stack, useColorMode, Center,Grid,GridItem,Heading } from '@chakra-ui/react'
 import SendeReceive from './SendeReceive';
 import FundingGuildeline from './FundingGuildeline';
 import SellGiftCard from './SellGiftCard';
@@ -27,12 +27,12 @@ const Home = () => {
 					borderRadius={"md"}
 				>
 					<Box >
-						<Text
+						<Heading
 							textAlign={{ base: "center", md: "center" }}
-							fontSize={"0.9rem"}
+							fontSize={"1.5rem"}
 						>
 							Start exchanges
-						</Text>
+						</Heading>
 					</Box>
 					<SendeReceive />
 					<FundingGuildeline />

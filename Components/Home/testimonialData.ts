@@ -24,7 +24,7 @@ export const testimonial: iTestimonial[] = [
 		id: 2,
 		img1: "/assets/images/cashapp.png",
         img2: "/assets/images/cash.png",
-        from: "Casshapp",
+        from: "Cashapp",
         to: "Naira",
         "rate": "Great trade",
         content: "They offer a quick and reliable service",
