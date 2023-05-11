@@ -2,7 +2,9 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Box,Container } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
+import { testimonial } from './testimonialData';
+import CarouselItem from './CarouselItem';
 
 const Carousel = () => {
     const settings = {
@@ -14,17 +16,11 @@ const Carousel = () => {
             autoplay:true
 		};
     return (
-			<Container w={{ base: "sm", md: "md" }}>
+			<Container w={{ base: "22rem", md: "md" }}>
 				<Slider {...settings}>
-					<Box bg={"blue.400"} textAlign={"center"}>
-						8
-					</Box>
-					<Box bg={"green.400"} textAlign={"center"}>
-						9
-					</Box>
-					<Box bg={"red.400"} textAlign={"center"}>
-						7
-					</Box>
+				{
+					testimonial.map(el => <CarouselItem content={el.content} key={el.id} name={el.name } />)
+					}
 				</Slider>
 			</Container>
 		);
