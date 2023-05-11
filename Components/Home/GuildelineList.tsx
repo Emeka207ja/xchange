@@ -9,8 +9,8 @@ interface Props {
 const GuildelineList = ({id,process}: Props) => {
     
   return (
-		<List key={id} spacing={5}>
-			<ListItem fontSize={{ base: "0.9rem", md: "1rem" }}>
+		<List key={id} >
+			<ListItem fontSize={{ base: "0.8rem", md: "1rem" }}>
 				<ListIcon as={SettingsIcon} color="green.500" />
 				{process}
 			</ListItem>

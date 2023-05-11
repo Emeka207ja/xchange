@@ -44,7 +44,7 @@ const FundingGuildeline = () => {
 			>
 				How to sell crypto or funds to us
 			</Heading>
-			<Box pos={"relative"} left={{ md: "3%" }}>
+			<Box display={"flex"} margin={{md:"0 6rem"}} flexDirection={"column"}>
 				{fundingProcedure?.map((el) => (
 					<GuildelineList id={el.id} process={el.process} key={el.id} />
 				))}
