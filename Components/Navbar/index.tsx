@@ -34,32 +34,29 @@ const Links = [
 	},
 	{
 		id: "Bitcoin",
-		url: "/bitcoin",
+		url: "/?query=bitcoin",
 	},
 	{
 		id: "USDT",
-		url: "/usdt",
+		url: "/?query=usdt",
 	},
 	{
 		id: " Skrill Funds",
-		url: "/skrill_funds",
+		url: "/?query=skrill_funds",
 	},
 	{
 		id: "Paypal Funds",
-		url: "/paypal_funds",
+		url: "/?query=paypal_funds",
 	},
 	{
 		id: "Zelle Funds",
-		url: "/zelle_funds",
+		url: "/?query=zelle_funds",
 	},
 	{
 		id: "CashApp",
-		url: "/cashapp",
+		url: "/?query=cashapp",
 	},
-	{
-		id: "Edd Transfer",
-		url: "/edd_transfer",
-	},
+	
 ];
 interface Props {
     children?: ReactNode,

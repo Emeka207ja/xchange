@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Box, Text, HStack, Stack, useColorMode, Center,Grid,GridItem,Heading } from '@chakra-ui/react'
 import SendeReceive from './SendeReceive';
 import FundingGuildeline from './FundingGuildeline';
@@ -6,17 +6,19 @@ import SellGiftCard from './SellGiftCard';
 import { Rates } from './Rate';
 import { AiOutlineMenu } from "react-icons/ai"
 import Testimonial from './Testimonial';
+import useNavigator from '../Hooks/useNavigator';
+import ExchangePointer from './ExchangePointer';
 
 
 const Home = () => {
- const { colorMode, toggleColorMode } = useColorMode();
+	const { colorMode, toggleColorMode } = useColorMode();
+	const [query] = useNavigator()
+	console.log(query)
   return (
 		<Box
-			
 			bg={colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.200"}
 			borderRadius={"md"}
 		>
-			
 			<Grid
 				gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(3,1fr)" }}
 				gap={4}
@@ -26,13 +28,14 @@ const Home = () => {
 					bg={colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.200"}
 					borderRadius={"md"}
 				>
-					<Box >
+					<Box margin={{base:"0 4rem",md:"0 23rem"}} paddingTop={4}>
 						<Heading
 							textAlign={{ base: "center", md: "center" }}
 							fontSize={"1.5rem"}
 						>
-							Start exchanges
+							{!query?.length && "Start exchanges"}
 						</Heading>
+						{query?.length && <ExchangePointer id={query} />}
 					</Box>
 					<SendeReceive />
 					<FundingGuildeline />
@@ -59,8 +62,8 @@ const Home = () => {
 							</HStack>
 						</Box>
 
-					  <Rates />
-					  <Testimonial/>
+						<Rates />
+						<Testimonial />
 					</Box>
 				</GridItem>
 			</Grid>

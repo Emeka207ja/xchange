@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {
     Box,
     FormLabel,
@@ -13,12 +13,22 @@ import {
 	GridItem
 } from '@chakra-ui/react'
 import { RiExchangeDollarLine } from "react-icons/ri"
-import {FaExchangeAlt} from "react-icons/fa"
+import { FaExchangeAlt } from "react-icons/fa"
+import useNavigator from '../Hooks/useNavigator'
+import { pointerData } from './pointerData'
+import { Find } from '../Utils/funcs'
 
 const SendeReceive = () => {
+	const [query] = useNavigator()
+
 	const [isMobile] = useMediaQuery("(max-width: 768px)"); 
-	const [coin, setCoin] = useState("Bitcoin")
+	const [coin, setCoin] = useState("BTC")
 	const [receive, setReceive] = useState("naira")
+
+	useEffect(() => {
+		const data = Find(pointerData,query)!
+		setCoin(data?.name)
+	},[query])
 	
 	const handleChange = (
 		e: React.ChangeEvent<HTMLSelectElement>,
@@ -30,6 +40,7 @@ const SendeReceive = () => {
 	const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault()
 	}
+
   return (
 		<Box>
 			
@@ -49,11 +60,11 @@ const SendeReceive = () => {
 								value={coin}
 								onChange={(e) => handleChange(e, setCoin)}
 							>
-								<option value="Bitcoin" style={{ fontSize: "0.6rem" }}>
+								<option value="BTC" style={{ fontSize: "0.6rem" }}>
 									Bitcoin
 								</option>
 								<option
-									value="usdt"
+									value="USDT"
 									style={{ fontSize: "0.6rem", width: "4rem" }}
 								>
 									USDT
