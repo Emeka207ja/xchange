@@ -17,7 +17,7 @@ const GiftCardGuildeline = ({name}:Props) => {
 			</ListItem>
 			<ListItem fontSize={{ base: "0.7rem", md: "1rem" }}>
 				<ListIcon as={SettingsIcon} color="green.500" />
-				Click on exchange button or customer chat to get info to send to
+				Click on exchange button or chat us to get payment info
 			</ListItem>
 			<ListItem fontSize={{ base: "0.7rem", md: "1rem" }}>
 				<ListIcon as={SettingsIcon} color="green.500" />
