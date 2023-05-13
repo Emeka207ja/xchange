@@ -28,14 +28,18 @@ const Home = () => {
 					bg={colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.200"}
 					borderRadius={"md"}
 				>
-					<Box margin={{base:"0 4rem",md:"0 23rem"}} paddingTop={4}>
-						<Heading
-							textAlign={{ base: "center", md: "center" }}
-							fontSize={"1.5rem"}
-						>
-							{!query?.length && "Start exchanges"}
-						</Heading>
-						{query?.length && <ExchangePointer id={query} />}
+					<Box margin={{ base: "0 2rem", md: "0 21rem" }} paddingTop={4}>
+						
+						{query?.length ? (
+							<ExchangePointer id={query} />
+						) : (
+							<Heading
+								textAlign={{ base: "center", md: "center" }}
+								fontSize={"1.5rem"}
+							>
+								Start Exchange
+							</Heading>
+						)}
 					</Box>
 					<SendeReceive />
 					<FundingGuildeline />

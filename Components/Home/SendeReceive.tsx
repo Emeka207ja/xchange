@@ -7,8 +7,7 @@ import {
 	Select,
 	Button,
 	useMediaQuery,
-	Flex,
-	Image,
+	Link,
 	Grid,
 	GridItem
 } from '@chakra-ui/react'
@@ -17,6 +16,7 @@ import { FaExchangeAlt } from "react-icons/fa"
 import useNavigator from '../Hooks/useNavigator'
 import { pointerData } from './pointerData'
 import { Find } from '../Utils/funcs'
+import SelectOption from './SelectOption'
 
 const SendeReceive = () => {
 	const [query] = useNavigator()
@@ -43,8 +43,6 @@ const SendeReceive = () => {
 
   return (
 		<Box>
-			
-
 			<form onSubmit={submitHandler}>
 				<Grid
 					gridTemplateColumns={{ base: "repeat(1fr)", md: "repeat(5,1fr)" }}
@@ -60,21 +58,9 @@ const SendeReceive = () => {
 								value={coin}
 								onChange={(e) => handleChange(e, setCoin)}
 							>
-								<option value="BTC" style={{ fontSize: "0.6rem" }}>
-									Bitcoin
-								</option>
-								<option
-									value="USDT"
-									style={{ fontSize: "0.6rem", width: "4rem" }}
-								>
-									USDT
-								</option>
-								<option
-									value="option3"
-									style={{ fontSize: "0.6rem", width: "4rem" }}
-								>
-									Option 3
-								</option>
+								{pointerData?.map((el) => (
+									<SelectOption name={el.name} img={el.img} key={el.id} />
+								))}
 							</Select>
 						</FormControl>
 					</GridItem>
@@ -106,19 +92,21 @@ const SendeReceive = () => {
 					</GridItem>
 				</Grid>
 				<Box>
-					<Button
-						colorScheme="red"
-						pos={"relative"}
-						left={{ base: "30%", md: "42%" }}
-						mt={{ base: "1rem", md: "2rem" }}
-						mb={"1rem"}
-						type={"submit"}
-					>
-						<Box paddingRight={"0.5rem"}>
-							<RiExchangeDollarLine />
-						</Box>
-						Exchange
-					</Button>
+					<Link href="https://api.whatsapp.com/send/?phone=09028879815&text&type=phone_number&app_absent=0">
+						<Button
+							colorScheme="red"
+							pos={"relative"}
+							left={{ base: "30%", md: "42%" }}
+							mt={{ base: "1rem", md: "2rem" }}
+							mb={"1rem"}
+							
+						>
+							<Box paddingRight={"0.5rem"}>
+								<RiExchangeDollarLine />
+							</Box>
+							Exchange
+						</Button>
+					</Link>
 				</Box>
 			</form>
 		</Box>

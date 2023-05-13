@@ -1,38 +1,21 @@
 import React from 'react'
 import { Box, Text, Heading } from "@chakra-ui/react";
 import GuildelineList from './GuildelineList';
+import GiftCardGuildeline from './GiftCardGuildeline';
+import useNavigator from '../Hooks/useNavigator';
+import { pointerData } from "./pointerData"
+import {Find} from "../Utils/funcs"
+
 
 const FundingGuildeline = () => {
+  
     interface guide{
         id: number,
         process:string
     }
-    const fundingProcedure: guide[] = [
-        {
-            id: 1,
-            process:"Select crypto or the type of fund you want to send"
-        },
-        {
-            id: 2,
-            process:"Click on exchange button to get info to send to"
-        },
-        {
-            id: 3,
-            process:"State how many crrpto or fun you want to send to the info"
-        },
-        {
-            id: 4,
-            process:"Transfer and wait for confirmation"
-        },
-        {
-            id: 5,
-            process:"Confirm reception of funds"
-        },
-        {
-            id: 6,
-            process:"Thanks for patronage"
-        },
-    ]
+    
+    const [query] = useNavigator()
+      const found = Find(pointerData,query);
   return (
 		<Box pos={"relative"} left={{ base: "3%", md: "0" }}>
 			<Heading
@@ -42,12 +25,10 @@ const FundingGuildeline = () => {
 				left={{ base: "13%", md: "0" }}
 				margin={"1.2rem 0"}
 			>
-				How to sell crypto or funds to us
+				How to {query ? `sell ${found?.name}` : "sell crypto or funds"} to us
 			</Heading>
-			<Box display={"flex"} margin={{md:"0 6rem"}} flexDirection={"column"}>
-				{fundingProcedure?.map((el) => (
-					<GuildelineList id={el.id} process={el.process} key={el.id} />
-				))}
+			<Box display={"flex"} margin={{ md: "0 6rem" }} flexDirection={"column"}>
+				{query ? <GiftCardGuildeline name={found?.name} /> : <GiftCardGuildeline />}
 			</Box>
 		</Box>
 	);

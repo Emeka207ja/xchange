@@ -26,12 +26,9 @@ import { MoonIcon, SunIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 const Links = [
 	{
 		id: "Exhange",
-		url: "/home",
+		url: "/",
 	},
-	{
-		id: "Rates",
-		url: "rates",
-	},
+
 	{
 		id: "Bitcoin",
 		url: "/?query=bitcoin",

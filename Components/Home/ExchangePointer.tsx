@@ -14,7 +14,7 @@ const ExchangePointer = ({ id }: Props) => {
 			<HStack>
 				<Box>
 					<HStack spacing={5}>
-						<Box fontSize={"0.7rem"}>Exchange</Box>
+						<Box fontSize={"0.9rem"}>Exchange</Box>
 						<Box>
 							<HStack>
 								<Box width={"1.2rem"}>
@@ -25,7 +25,7 @@ const ExchangePointer = ({ id }: Props) => {
 										objectFit={"cover"}
 									/>
 								</Box>
-								<Box fontSize={"0.7rem"}>{foundData?.name}</Box>
+								<Box fontSize={"0.9rem"}>{foundData?.name}</Box>
 							</HStack>
 						</Box>
 					</HStack>
@@ -35,7 +35,7 @@ const ExchangePointer = ({ id }: Props) => {
 				</Box>
 				<Box>
 					<HStack>
-						<Box width={"1.2rem"}>
+						<Box width={"1.6rem"}>
 							<Image
 								src="/assets/images/cash.png"
 								alt=""
@@ -43,7 +43,7 @@ const ExchangePointer = ({ id }: Props) => {
 								objectFit={"contain"}
 							/>
 						</Box>
-						<Box fontSize={"0.7rem"}>Naira NGN</Box>
+						<Box fontSize={"0.9rem"}>Naira NGN</Box>
 					</HStack>
 				</Box>
 			</HStack>
