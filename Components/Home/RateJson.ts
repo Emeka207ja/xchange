@@ -71,5 +71,68 @@ export const RateJson: iRate[] = [
         rate1: 500,
         rate2: 600
     },
+    {
+        id: 11,
+        img: "/assets/images/btc.png",
+        currency: "Bitcoin",
+        rate1: 650,
+        rate2: 750
+    },
+    {
+        id: 12,
+        img: "/assets/images/monzo.png",
+        currency: "Monzo",
+        rate1: 400,
+        rate2: 500
+    },
+    {
+        id: 13,
+        img: "/assets/images/paypal.png",
+        currency: "Paypal",
+        rate1: 400,
+        rate2: 550
+    },
+    {
+        id: 14,
+        img: "/assets/images/cashapp.png",
+        currency: "Cashapp",
+        rate1: 400,
+        rate2: 500
+    },
+    {
+        id: 15,
+        img: "/assets/images/pixx.png",
+        currency: "Pix Brazil",
+        rate1: 400,
+        rate2: 500
+    },
+    {
+        id: 16,
+        img: "/assets/images/moneylion.jpg",
+        currency: "Money Lion",
+        rate1: 300,
+        rate2: 400
+    },
+    {
+        id: 17,
+        img: "/assets/images/edd.png",
+        currency: "EED transfer",
+        rate1: 400,
+        rate2: 450
+    },
+    {
+        id: 18,
+        img: "/assets/images/fiverr.png",
+        currency: "Fiver",
+        rate1: 400,
+        rate2: 650
+    },
+    {
+        id: 19,
+        img: "/assets/images/tiktok.png",
+        currency: "TikTok coins",
+        rate1: 500,
+        rate2: 650
+    },
    
 ]
